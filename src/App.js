@@ -3,9 +3,9 @@ import { ethers } from 'ethers'
 import './App.css';
 import OpenAR from './utils/OpenAR.json'
 
-// const OpenARAddress = "0x5eC93e4475089CCD84025959B707FAa3F7d635E6" //localhost:8545
+// const OpenARAddress = "0xb43F4A509B296150E63eEe50a96bd96cD7CdD084" //localhost:8545
 
-const OpenARAddress = "0xdF41435F04AfF150e247ee3DFE55f25E03cc9ED0" // Ropsten
+const OpenARAddress = "0x89645A7a00Efdf00F0304122F46243Ce20df7395" // Ropsten
 
 function App() {
   const [currentAccount, setCurrentAccount] = useState("");
@@ -16,7 +16,6 @@ function App() {
   const [addr2, setAddr2] = useState()
   const [userBalance, setOwnerBalance] = useState()
   const [ownerOfNFT, setOwnerOfNFT] = useState()
-  const [newAmount, setNewAmount] = useState()
   const [newOwner, setNewOwner] = useState()
   const [newTokenURI, setNewTokenURI] = useState()
   const [receiver, setReceiver] = useState()
@@ -95,7 +94,6 @@ function App() {
       const contract = new ethers.Contract(OpenARAddress, OpenAR.abi, signer);
       const transaction = await contract.mint(tokenURI, amount, userAccount);
       await transaction.wait();
-      setNewAmount(amount);
       setNewOwner(userAccount);
     }
   }
@@ -119,7 +117,7 @@ function App() {
       const provider = new ethers.providers.Web3Provider(window.ethereum);
       const signer = provider.getSigner();
       const contract = new ethers.Contract(OpenARAddress, OpenAR.abi, signer);
-      const transaction = await contract["safeTransferFrom(address,address,uint256)"](addr1, addr2, 5);
+      const transaction = await contract["safeTransferFrom(address,address,uint256)"](addr1, addr2, 1);
       await transaction.wait();
       setNewTokenURI(tokenURI); 
       setReceiver(addr2);
@@ -173,7 +171,7 @@ useEffect(() => {
         <input onChange={e => setTokenURI(e.target.value)} placeholder="Token URI" />
         <input onChange={e => setAmount(e.target.value)} placeholder="Sale Price $USD" />
         <input onChange={e => setUserAccount(e.target.value)} placeholder="Owner" />
-        <div>{newAmount} NFTs successfully minted by: {newOwner}</div>
+        <div>NFT successfully minted by: {newOwner}</div>
 
         {/* <br />
         <button onClick={purchaseNFT}>Purchase NFT</button>
