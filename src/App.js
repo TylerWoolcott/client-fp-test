@@ -5,7 +5,7 @@ import OpenAR from './utils/OpenAR.json'
 
 // const OpenARAddress = "0xb43F4A509B296150E63eEe50a96bd96cD7CdD084" //localhost:8545
 
-const OpenARAddress = "0xfE8CEB8b18232618b29bd053Eb3506420618d960" // Ropsten
+const OpenARAddress = "0x6B296B4187ea6d4Ba9259D9f94DEb09c58B95b8b" // Ropsten
 
 function App() {
   const [currentAccount, setCurrentAccount] = useState("");

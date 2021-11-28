@@ -27584,8 +27584,8 @@
         }
       },
       "links": {},
-      "address": "0xfE8CEB8b18232618b29bd053Eb3506420618d960",
-      "transactionHash": "0x5a7335c7920828efa395895e8aee2bbf98f6208b6654776a834f7fbafcf45040"
+      "address": "0x6B296B4187ea6d4Ba9259D9f94DEb09c58B95b8b",
+      "transactionHash": "0x93931aa0e55536e1b574149f0a229de140007af383ed71e7160fea2c05c30823"
     },
     "1636457062615": {
       "events": {},
@@ -27595,7 +27595,7 @@
     }
   },
   "schemaVersion": "3.4.3",
-  "updatedAt": "2021-11-26T20:57:30.138Z",
+  "updatedAt": "2021-11-28T18:48:15.586Z",
   "networkType": "ethereum",
   "devdoc": {
     "author": "Tyler Woolcott",
